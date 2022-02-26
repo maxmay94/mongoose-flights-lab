@@ -42,7 +42,11 @@
             <%= flight.flightNo %>
           </td>
           <td>
+            <% if (flight.departs <= new Date()) { %>
+              <p style="color:red"><%= flight.departs %></p>
+            <% } else {%>
             <%= flight.departs %>
+            <% } %> 
           </td>
         </tr>
         <% }) %>
