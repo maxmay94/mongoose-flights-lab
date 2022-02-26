@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,14 @@
   <link rel="stylesheet" href="/stylesheets/flights/index.css">
   <title>All Flights</title>
 </head>
+
 <body>
   <h1>ALL FLIGHTS</h1>
 
   <table>
     <thead>
       <tr>
+        <th>Cancel Flight</th>
         <th>Airline</th>
         <th>Airport</th>
         <th>Flight Number</th>
@@ -22,24 +25,30 @@
     </thead>
 
     <tbody>
-      <% flights.forEach(flight => { %>
+      <% flights.forEach(flight=> { %>
         <tr>
           <td>
-            <%= flight.airline %> 
+            <form action="/flights/<%= flight._id %>?_method=DELETE" class="delete-form" method="POST">
+              <button type="submit">X</button>
+            </form>
           </td>
           <td>
-            <%= flight.airport %> 
+            <%= flight.airline %>
           </td>
           <td>
-            <%= flight.flightNo %> 
+            <%= flight.airport %>
           </td>
           <td>
-            <%= flight.departs %> 
+            <%= flight.flightNo %>
+          </td>
+          <td>
+            <%= flight.departs %>
           </td>
         </tr>
-      <% }) %> 
+        <% }) %>
     </tbody>
   </table>
   <a href="/">Go back</a>
 </body>
+
 </html>

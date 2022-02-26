@@ -12,9 +12,16 @@ table td {
   text-align: center;
 }
 
-table tr:hover {
-  background-color: rgb(215, 249, 249);
+tr:hover {
+  color: rgb(32, 32, 32);
+  background-color: rgb(217, 217, 217);
 }
+
+table th:hover {
+  background-color: rgb(32, 32, 32);
+  color: rgb(217, 217, 217);
+}
+
 a:hover {
   color: rgb(77, 212, 212);
 }
