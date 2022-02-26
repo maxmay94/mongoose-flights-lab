@@ -5,6 +5,20 @@ body {
   color: rgb(217, 217, 217);
 }
 
+h1 {
+  color: rgb(255, 166, 0);
+}
+
+div {
+  margin-top: 10px;
+}
+
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: #7c9835;
+}
+
+a:hover {
+  color: #95cd08;
+  text-decoration: underline dashed;
 }

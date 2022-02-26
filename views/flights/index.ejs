@@ -42,17 +42,24 @@
             <%= flight.flightNo %>
           </td>
           <td>
-            <% if (flight.departs <= new Date()) { %>
-              <p style="color:red"><%= flight.departs %></p>
-            <% } else {%>
-            <%= flight.departs %>
-            <% } %> 
+            <% if (flight.departs <=new Date()) { %>
+              <p style="color:red">
+                <%= flight.departs %>
+              </p>
+              <% } else {%>
+                <%= flight.departs %>
+                  <% } %>
           </td>
         </tr>
         <% }) %>
     </tbody>
   </table>
-  <a href="/">Go back</a>
+  <div>
+    <a href="/">Go back</a> <br>
+  </div>
+  <div>
+    <a href="flights/new">Book a Flight</a>
+  </div>
 </body>
 
 </html>
