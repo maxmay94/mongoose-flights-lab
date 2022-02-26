@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Flight!</title>
+</head>
+<body>
+  <h1>Book a Flight!</h1>
+  <!-- change to /flights       after index.ejs is created -->
+  <form action="/flights" method="POST">
+    <label>Which Airline would you like to Travel With:
+      <select name="airline">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+    </select>
+    </label><br>
+    <label>Destination:
+      <select name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN" selected>DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+        <option value="BOS">BOS</option>
+      </select>
+    </label><br>
+    <label>Flight Number(# between 10 and 9999)
+      <input type="text" name="flightNo">
+    </label><br>
+    <label>Departs:
+      <input type="datetime-local" name="departs">
+    </label><br>
+    <button type="submit">Book Flight!</button>
+  </form>
+  <a href="/">Go back</a>
+</body>
+</html>
