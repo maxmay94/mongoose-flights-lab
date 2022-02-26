@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const flightSchema = new Schema ({
-  ariline: {
+  airline: {
     type: String,
     enum: ['American', 'Southwest', 'United']
   },
@@ -20,7 +20,7 @@ const flightSchema = new Schema ({
   departs: {
     type: Date,
     default: function() {
-      return (new Date().getFullYear() + 1)
+      return new Date((new Date().getFullYear() + 1))
     }
   }
 }, {
