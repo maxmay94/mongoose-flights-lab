@@ -19,6 +19,5 @@ form > button {
 }
 
 button:hover {
-  background-color: rgb(56, 113, 38);
-  color: rgb(203, 203, 203);
+  background-color: #74971d;
 }
