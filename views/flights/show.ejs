@@ -55,7 +55,11 @@
         <% flight.tickets.forEach(function(ticket) { %>
           <tr>
             <td>
-              <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" class="delete-form" method="POST">
+              <form 
+                action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" 
+                class="delete-form" 
+                method="POST"
+              >
                 <button type="submit">X</button>
               </form>
             </td>
@@ -67,6 +71,7 @@
     </table>
 
    <% if(flight.meals.length) { %>
+
     <h3>Meals</h3>
       <table>
         <thead>
@@ -77,8 +82,12 @@
           <% flight.meals.forEach(function(meal) { %>
             <tr>
               <td>
-                <form>
-                  <button>X</button>
+                <form 
+                  action="/flights/<%= flight._id %>/meals/<%= meal._id %>?_method=DELETE" 
+                  class="delete-meal-form" 
+                  method="POST" 
+                >
+                  <button type="submit">X</button>
                 </form>
               </td>
               <td><%= meal.name %> </td>
