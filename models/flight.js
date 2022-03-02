@@ -31,11 +31,11 @@ const flightSchema = new Schema ({
   departs: {
     type: Date,
     default: function() {
-      // Had some help from stackoverflow -----v
       return new Date(new Date().setFullYear(new Date().getFullYear() + 1))
     }
   },
   tickets: [ticketSchema],
+  meals: [{ type: Schema.Types.ObjectId, ref: 'Meal' }]
 }, {
   timestamps: true
 })
