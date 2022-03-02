@@ -18,6 +18,8 @@ router.post('/:id/meals', flightsCtrl.addMeal)
 
 // DELETE - localhost:3000/flights/:id
 router.delete('/:id', flightsCtrl.delete)
+// DELETE - localhost:3000/flights/:id
+router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
 
 export {
   router

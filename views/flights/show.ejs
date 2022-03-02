@@ -55,8 +55,8 @@
         <% flight.tickets.forEach(function(ticket) { %>
           <tr>
             <td>
-              <form action="">
-                <button>X</button>
+              <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">X</button>
               </form>
             </td>
             <td><%= ticket.seat %> </td>
@@ -99,7 +99,7 @@
     id="add-seat-form"
     method="POST"
   >
-  <table>
+  <table id="add-ticket-table">
     <tr>
       <td>
         <label>Seat Number:</label>
@@ -126,14 +126,13 @@
     id="add-meal-to-flight"
     method="POST"
   >
-  <table>
+  <table id="add-meal-table">
     <tr>
       <td>
         <label>Meal:</label>
       </td>
       <td>
         <select name="mealId"> 
-          <!-- WHY IS mealID undefined? see flights controllers line 68 -->
           <% mealPlan.forEach(meal => { %>
             <option value="<%= meal._id %>"><%= meal.name %></option>
           <% }) %>
