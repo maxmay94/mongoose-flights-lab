@@ -44,6 +44,7 @@ function show(req, res) {
   .populate('meals')
   .exec(function(err, flight) {
     Meal.find({_id: {$nin: flight.meals}}, function(err, mealPlan) {
+      console.log(mealPlan)
       res.render('flights/show', {
         flight,
         title: 'Flight Detail',
@@ -63,8 +64,10 @@ function createTicket(req, res) {
 }
 
 function addMeal(req, res) {
+  console.log(req.body)
   Flight.findById(req.params.id, function(err, flight) {
     flight.meals.push(req.body.mealId)
+    console.log(req.body.mealId) // WHY IS mealID undefined?? see show.ejs line 136
     flight.save(function(err) {
       res.redirect(`/flights/${flight._id}`)
     })

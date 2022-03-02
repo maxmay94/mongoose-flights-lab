@@ -74,20 +74,20 @@
           <th>Meal</th>
         </thead>
         <tbody>
-          <% flight.meals.forEach(function(mealPlan) { %>
+          <% flight.meals.forEach(function(meal) { %>
             <tr>
               <td>
                 <form>
                   <button>X</button>
                 </form>
               </td>
-              <td><%= mealPlan.name %> </td>
+              <td><%= meal.name %> </td>
             </tr>
           <% }) %>
         </tbody>
       </table>
     <% } else { %> 
-      <h3>No Meals Yet</h3>
+      <h3>This Flight has No Meal Plan Yet</h3>
     <% } %> 
   <% } else { %>
     <h3>No Tickets Yet</h3>
@@ -95,10 +95,10 @@
 
   <h3>Add A Ticket</h3>
   <form 
-  action="/flights/<%= flight._id %>/tickets"
-  id="add-seat-form"
-  method="POST"
->
+    action="/flights/<%= flight._id %>/tickets"
+    id="add-seat-form"
+    method="POST"
+  >
   <table>
     <tr>
       <td>
@@ -121,9 +121,10 @@
 </form>
 
 <h3>Add Meal</h3>
-<form id="add-meal-to-flight"
-      action="/flights/<%= flight._id %>/meals"
-      method="POST"
+<form 
+    action="/flights/<%= flight._id %>/meals"
+    id="add-meal-to-flight"
+    method="POST"
   >
   <table>
     <tr>
@@ -131,7 +132,8 @@
         <label>Meal:</label>
       </td>
       <td>
-        <select name="mealID">
+        <select name="mealId"> 
+          <!-- WHY IS mealID undefined? see flights controllers line 68 -->
           <% mealPlan.forEach(meal => { %>
             <option value="<%= meal._id %>"><%= meal.name %></option>
           <% }) %>
