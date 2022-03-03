@@ -69,37 +69,37 @@
         <% }) %>
       </tbody>
     </table>
-
-   <% if(flight.meals.length) { %>
-
-    <h3>Meals</h3>
-      <table>
-        <thead>
-          <th>Remove</th>
-          <th>Meal</th>
-        </thead>
-        <tbody>
-          <% flight.meals.forEach(function(meal) { %>
-            <tr>
-              <td>
-                <form 
-                  action="/flights/<%= flight._id %>/meals/<%= meal._id %>?_method=DELETE" 
-                  class="delete-meal-form" 
-                  method="POST" 
-                >
-                  <button type="submit">X</button>
-                </form>
-              </td>
-              <td><%= meal.name %> </td>
-            </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    <% } else { %> 
-      <h3>This Flight has No Meal Plan Yet</h3>
-    <% } %> 
   <% } else { %>
     <h3>No Tickets Yet</h3>
+  <% } %> 
+
+<% if(flight.meals.length) { %>
+
+  <h3>Meals</h3>
+    <table>
+      <thead>
+        <th>Remove</th>
+        <th>Meal</th>
+      </thead>
+      <tbody>
+        <% flight.meals.forEach(function(meal) { %>
+          <tr>
+            <td>
+              <form 
+                action="/flights/<%= flight._id %>/meals/<%= meal._id %>?_method=DELETE" 
+                class="delete-meal-form" 
+                method="POST" 
+              >
+                <button type="submit">X</button>
+              </form>
+            </td>
+            <td><%= meal.name %> </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %> 
+    <h3>This Flight has No Meal Plan Yet</h3>
   <% } %> 
 
   <h3>Add A Ticket</h3>
